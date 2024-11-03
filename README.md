@@ -1,36 +1,32 @@
 The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
 
-(__TODO__: your project name)
-
-# Shoppy Shoperson 
+# ClozExchange 
 
 ## Overview
 
-(__TODO__: a brief one or two paragraph, high-level description of your project)
+Clothes has become a staple. And some clothes will continue to be fashionable while others won't be. How can we create a sustainable way to dress well instead of promoting fast fashion. 
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
-
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
-
+Tradey is a web app that allows users to trade with other users. Users can register and login. Once they're logged in, they can promote which clothes they want to trade with others. Every user has a shop where they showcase their clothes that they would like to trade with others, they can add and remove items from the shop. This promotes a more sustainable approach and promotes good fashion (embodying the idea of thrifting and bartering but combined).
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other) 
+The application will store Users, 
 
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
-
-(__TODO__: sample documents)
+* Users can have multiple shops (based on the category of clothing: shirts, shorts, pants etc.)
+* Each shop can have multiple clothing items (by embedding) and is associated with a specific clothing category
+* Users can have multiple chats
+* Reviews: users can writer reviews on other users' shops and user's shop can receive multiple reviews from different users
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "bennytrader",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  shops: // an array of references to Shop documents
+  chats: // an array of references to Chat documents
+  reviews: // an array of references to User's Reviews documents
+  profession: 'Amateur'
 }
 ```
 
@@ -39,69 +35,110 @@ An Example List with Embedded Items:
 ```javascript
 {
   user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
+  shops: [
+    {
+      name: "pants",
+      items: [
+        { name: "Jeans", quantity: 20, checked: false },
+        { name: "Chinos", quantity: 10, checked: false }
+      ]
+    },
+    {
+      name: "shirts",
+      items: [
+        { name: "T-shirts", quantity: 15, checked: false },
+        { name: "Dress shirts", quantity: 5, checked: false }
+      ]
+    }
   ],
-  createdAt: // timestamp
+  chats: [
+    { withUser: "username1", category: "pants", lastMessageChecked: false },
+    { withUser: "username2", category: "shirts", lastMessageChecked: false }
+  ],
+  reviews: [ 
+    { reviewer: "username1", category: "pants", comment: "Great quality!", checked: false },
+    { reviewer: "username2", category: "shirts", comment: "Satisfied", checked: false }
+  ],
+  createdAt:
 }
-```
-
+``` 
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-(__TODO__: create a first draft of your Schemas in db.mjs and link to it)
-
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
+/shop/create - page for creating a new shop
+![shop create](documentation/create-new-shop.png)
 
-/list/create - page for creating a new shopping list
+/shops - page for showing all the shops
+![shops](documentation/my-shops.png)
 
-![list create](documentation/list-create.png)
+/shop/slug - page for showing specific shops
+![user's specific shop](documentation/my-shop-slug.png)
 
-/list - page for showing all shopping lists
+/shop/slug/reviews - page for showing specific shop's reviews
+![user's specific shop's reviews](documentation/my-shop-reviews-slug.png)
 
-![list](documentation/list.png)
+/chats/ - page for showing all the chats
+![all of your user chats](documentation/chats.png)
 
-/list/slug - page for showing specific shopping list
+/chat/slug - page for showing specific chats
+![specific chat](documentation/chat-slug.png)
 
-![list](documentation/list-slug.png)
+/edit/clothes/slug - page for editing a piece clothing
+![editing a specific piece of clothing](documentation/edit-clothes-slug.png)
+
+/create/clothes - page for creating a new clothes piece to trade
+![created a specific clothes](documentation/create-clothes.png)
+
+/ - home page which displays most popular pieces of clothing
+![home](documentation/home.png)
+
+/login - login page
+![user login](documentation/login.png)
+
+/register - register page
+![register](documentation/register.png)
+
+/myAccount - user's account settings
+![user account](documentation/my-account.png)
+
+/my/shop/review/slug - other user's review on your specific shop
+![user's review on your shop](documentation/my-specific-review.png)
+
+/submit/review/slug - you submit review about another user
+![you submit review](documentation/submit-review-slug.png)
+
+/trade/clothes/slug - trade your clothes for another piece of clothing
+![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)
+
+/trade/slug - browse through clothes to trade from a particular category of clothing
+![trade your clothes for another piece of clothing](documentation/trade-slug-category.png)
 
 ## Site map
-
-(__TODO__: draw out a site map that shows how pages are related to each other)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![Site Map](documentation/site-map.png)
 
 ## User Stories or Use Cases
 
-(__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
-
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+3. as a user, I can create a new shop or multiple shops
+4. as a user, I can view all of the shops I've created in a single list
+5. as a user, I can add/delete items to an existing shop
+6. as a user, I can preview other user's shops
+7. as a user, I can trade/barter my clothes for other user's clothes
+8. as a user, I can chat/message other users
+9. as a user, I can leave reviews on other users' shops to provide feedback on items and services.
+10. as a user, I can view the reviews other users have left on my shops.
 
 ## Research Topics
 
-(__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
-
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
-
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit)
+* (6 points) React.js
+    * used React.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+* (2 points) Multi-Factor Authentication
+    * send an email to the user's email to verify that they are indeed the user
+* (2 points) Integrate Messaging Service
+    * integrate GetStream API to enable messaging functionality
 
 
 ## [Link to Initial Main Project File](app.mjs) 
@@ -110,8 +147,11 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## Annotations / References Used
 
-(__TODO__: list any tutorials/references/etc. that you've based your code off of)
+[GetStream API Documents](https://getstream.io/chat/?adgroup=155988470535&matchtype=p&device=c&network=g&placement=&adposition=&utm_source=google&utm_medium=cpc&utm_campaign=20779301884&utm_term=build%20chat%20app&utm_content=680817547858&hsa_acc=6893682346&hsa_cam=20779301884&hsa_grp=155988470535&hsa_ad=680817547858&hsa_src=g&hsa_tgt=kwd-323226821902&hsa_kw=build%20chat%20app&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjwm5e5BhCWARIsANwm06gKb9-XfCCmFxw_BV7YLLffPOdGhZR8-W824eh9Pw28AUjJeScPX3gaAn-CEALw_wcB)
 
-1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
-2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
+[React Website Tutorial](https://www.youtube.com/watch?v=I2UBjN5ER4s)
+
+[Bcrypt Documents](https://www.npmjs.com/package/bcrypt)
+
+[Multi-Factor Authentication with Google](https://esketchers.com/implementing-2fa-with-mern-stack/)
 
