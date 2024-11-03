@@ -61,7 +61,7 @@ An Example List with Embedded Items:
 }
 ``` 
 
-## [Link to Commented First Draft Schema](db.mjs) 
+## [Link to Commented First Draft Schema](src/db.mjs) 
 
 ## [Wireframes](https://www.figma.com/design/99dIYCjyoACnFUPb4f8RNp/Untitled?node-id=37-2&t=l5TFQG02U1OAv6QA-1)
 
