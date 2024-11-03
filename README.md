@@ -4,7 +4,7 @@
 
 Clothes has become a staple. And some clothes will continue to be fashionable while others won't be. How can we create a sustainable way to dress well instead of promoting fast fashion. 
 
-Tradey is a web app that allows users to trade with other users. Users can register and login. Once they're logged in, they can promote which clothes they want to trade with others. Every user has a shop where they showcase their clothes that they would like to trade with others, they can add and remove items from the shop. This promotes a more sustainable approach and promotes good fashion (embodying the idea of thrifting and bartering but combined).
+ClozExchange is a web app that allows users to trade with other users. Users can register and login. Once they're logged in, they can promote which clothes they want to trade with others. Every user has a shop where they showcase their clothes that they would like to trade with others, they can add and remove items from the shop. This promotes a more sustainable approach and promotes good fashion (embodying the idea of thrifting and bartering but combined).
 
 ## Data Model
 
