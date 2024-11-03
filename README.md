@@ -67,129 +67,129 @@ An Example List with Embedded Items:
 
 <div align="center">
 
-### /shop/create  
+### /shop/create - **Page for creating a new shop**
 ![shop create](documentation/create-new-shop.png)  
-**Page for creating a new shop**
+
 
 </div>
 
 <div align="center">
 
-### /shops  
+### /shops - **Page for showing all the shops**
 ![shops](documentation/my-shops.png)  
-**Page for showing all the shops**
+
 
 </div>
 
 <div align="center">
 
-### /shop/slug  
+### /shop/slug - **Page for showing specific shops**
 ![user's specific shop](documentation/my-shop-slug.png)  
-**Page for showing specific shops**
+
 
 </div>
 
 <div align="center">
 
-### /shop/slug/reviews  
+### /shop/slug/reviews - **Page for showing specific shop's reviews**  
 ![user's specific shop's reviews](documentation/my-shop-reviews-slug.png)  
-**Page for showing specific shop's reviews**
+
 
 </div>
 
 <div align="center">
 
-### /chats/  
+### /chats/ - **Page for showing all the chats**
 ![all of your user chats](documentation/chats.png)  
-**Page for showing all the chats**
+
 
 </div>
 
 <div align="center">
 
-### /chat/slug  
+### /chat/slug - **Page for showing specific chats**
 ![specific chat](documentation/chat-slug.png)  
-**Page for showing specific chats**
+
 
 </div>
 
 <div align="center">
 
-### /edit/clothes/slug  
+### /edit/clothes/slug - **Page for editing a piece of clothing**
 ![editing a specific piece of clothing](documentation/edit-clothes-slug.png)  
-**Page for editing a piece of clothing**
+
 
 </div>
 
 <div align="center">
 
-### /create/clothes  
+### /create/clothes - **Page for creating a new clothes piece to trade**
 ![created a specific clothes](documentation/create-clothes.png)  
-**Page for creating a new clothes piece to trade**
+
 
 </div>
 
 <div align="center">
 
-### /  
+### / - **Home page which displays most popular pieces of clothing**
 ![home](documentation/home.png)  
-**Home page which displays most popular pieces of clothing**
+
 
 </div>
 
 <div align="center">
 
-### /login  
+### /login - **Login page**
 ![user login](documentation/login.png)  
-**Login page**
+
 
 </div>
 
 <div align="center">
 
-### /register  
+### /register - **Register page**
 ![register](documentation/register.png)  
-**Register page**
+
 
 </div>
 
 <div align="center">
 
-### /myAccount  
+### /myAccount - **User's account settings**
 ![user account](documentation/my-account.png)  
-**User's account settings**
+
 
 </div>
 
 <div align="center">
 
-### /my/shop/review/slug  
+### /my/shop/review/slug - **Other user's review on your specific shop**
 ![user's review on your shop](documentation/my-specific-review.png)  
-**Other user's review on your specific shop**
+
 
 </div>
 
 <div align="center">
 
-### /submit/review/slug  
+### /submit/review/slug - **You submit review about another user**
 ![you submit review](documentation/submit-review-slug.png)  
-**You submit review about another user**
+
 
 </div>
 
 <div align="center">
 
-### /trade/clothes/slug  
+### /trade/clothes/slug - **Trade your clothes for another piece of clothing**
 ![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)  
-**Trade your clothes for another piece of clothing**
+
 
 </div>
 
 <div align="center">
 
-### /trade/slug  
+### /trade/slug - **Browse through clothes to trade from a particular category of clothing**
 ![browse through clothes to trade](documentation/trade-slug-category.png)  
-**Browse through clothes to trade from a particular category of clothing**
+
 
 </div>
 
@@ -217,7 +217,8 @@ An Example List with Embedded Items:
     * send an email to the user's email to verify that they are indeed the user
 * (2 points) Integrate Messaging Service
     * integrate GetStream API to enable messaging functionality
-
+  
+10 points total out of 8 required points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
