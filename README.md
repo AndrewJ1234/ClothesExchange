@@ -13,7 +13,7 @@ The application will store Users,
 * Users can have multiple shops (based on the category of clothing: shirts, shorts, pants etc.)
 * Each shop can have multiple clothing items (by embedding) and is associated with a specific clothing category
 * Users can have multiple chats
-* Reviews: users can writer reviews on other users' shops and user's shop can receive multiple reviews from different users
+* Users can write reviews for other users' shops, and user shops can receive multiple reviews from different users
 
 An Example User:
 
