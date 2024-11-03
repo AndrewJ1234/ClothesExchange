@@ -63,7 +63,7 @@ An Example List with Embedded Items:
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-## Wireframes
+## [Wireframes](https://www.figma.com/design/99dIYCjyoACnFUPb4f8RNp/Untitled?node-id=37-2&t=l5TFQG02U1OAv6QA-1)
 
 /shop/create - page for creating a new shop
 ![shop create](documentation/create-new-shop.png)
