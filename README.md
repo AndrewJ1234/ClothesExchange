@@ -65,53 +65,133 @@ An Example List with Embedded Items:
 
 ## [Wireframes](https://www.figma.com/design/99dIYCjyoACnFUPb4f8RNp/Untitled?node-id=37-2&t=l5TFQG02U1OAv6QA-1)
 
-/shop/create - page for creating a new shop
-![shop create](documentation/create-new-shop.png)
+<div align="center">
 
-/shops - page for showing all the shops
-![shops](documentation/my-shops.png)
+### /shop/create  
+![shop create](documentation/create-new-shop.png)  
+**Page for creating a new shop**
 
-/shop/slug - page for showing specific shops
-![user's specific shop](documentation/my-shop-slug.png)
+</div>
 
-/shop/slug/reviews - page for showing specific shop's reviews
-![user's specific shop's reviews](documentation/my-shop-reviews-slug.png)
+<div align="center">
 
-/chats/ - page for showing all the chats
-![all of your user chats](documentation/chats.png)
+### /shops  
+![shops](documentation/my-shops.png)  
+**Page for showing all the shops**
 
-/chat/slug - page for showing specific chats
-![specific chat](documentation/chat-slug.png)
+</div>
 
-/edit/clothes/slug - page for editing a piece clothing
-![editing a specific piece of clothing](documentation/edit-clothes-slug.png)
+<div align="center">
 
-/create/clothes - page for creating a new clothes piece to trade
-![created a specific clothes](documentation/create-clothes.png)
+### /shop/slug  
+![user's specific shop](documentation/my-shop-slug.png)  
+**Page for showing specific shops**
 
-/ - home page which displays most popular pieces of clothing
-![home](documentation/home.png)
+</div>
 
-/login - login page
-![user login](documentation/login.png)
+<div align="center">
 
-/register - register page
-![register](documentation/register.png)
+### /shop/slug/reviews  
+![user's specific shop's reviews](documentation/my-shop-reviews-slug.png)  
+**Page for showing specific shop's reviews**
 
-/myAccount - user's account settings
-![user account](documentation/my-account.png)
+</div>
 
-/my/shop/review/slug - other user's review on your specific shop
-![user's review on your shop](documentation/my-specific-review.png)
+<div align="center">
 
-/submit/review/slug - you submit review about another user
-![you submit review](documentation/submit-review-slug.png)
+### /chats/  
+![all of your user chats](documentation/chats.png)  
+**Page for showing all the chats**
 
-/trade/clothes/slug - trade your clothes for another piece of clothing
-![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)
+</div>
 
-/trade/slug - browse through clothes to trade from a particular category of clothing
-![trade your clothes for another piece of clothing](documentation/trade-slug-category.png)
+<div align="center">
+
+### /chat/slug  
+![specific chat](documentation/chat-slug.png)  
+**Page for showing specific chats**
+
+</div>
+
+<div align="center">
+
+### /edit/clothes/slug  
+![editing a specific piece of clothing](documentation/edit-clothes-slug.png)  
+**Page for editing a piece of clothing**
+
+</div>
+
+<div align="center">
+
+### /create/clothes  
+![created a specific clothes](documentation/create-clothes.png)  
+**Page for creating a new clothes piece to trade**
+
+</div>
+
+<div align="center">
+
+### /  
+![home](documentation/home.png)  
+**Home page which displays most popular pieces of clothing**
+
+</div>
+
+<div align="center">
+
+### /login  
+![user login](documentation/login.png)  
+**Login page**
+
+</div>
+
+<div align="center">
+
+### /register  
+![register](documentation/register.png)  
+**Register page**
+
+</div>
+
+<div align="center">
+
+### /myAccount  
+![user account](documentation/my-account.png)  
+**User's account settings**
+
+</div>
+
+<div align="center">
+
+### /my/shop/review/slug  
+![user's review on your shop](documentation/my-specific-review.png)  
+**Other user's review on your specific shop**
+
+</div>
+
+<div align="center">
+
+### /submit/review/slug  
+![you submit review](documentation/submit-review-slug.png)  
+**You submit review about another user**
+
+</div>
+
+<div align="center">
+
+### /trade/clothes/slug  
+![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)  
+**Trade your clothes for another piece of clothing**
+
+</div>
+
+<div align="center">
+
+### /trade/slug  
+![browse through clothes to trade](documentation/trade-slug-category.png)  
+**Browse through clothes to trade from a particular category of clothing**
+
+</div>
 
 ## Site map
 ![Site Map](documentation/site-map.png)
