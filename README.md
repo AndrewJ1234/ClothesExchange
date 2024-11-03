@@ -215,7 +215,7 @@ An Example List with Embedded Items:
     * used React.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
 * (2 points) Multi-Factor Authentication
     * send an email to the user's email to verify that they are indeed the user
-* (1 point) Integrate Messaging Service
+* (2 points) Integrate Messaging Service
     * integrate GetStream API to enable messaging functionality
 
 
