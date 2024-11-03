@@ -143,8 +143,6 @@ An Example List with Embedded Items:
 
 ## [Link to Initial Main Project File](app.mjs) 
 
-(__TODO__: create a skeleton Express application with a package.json, app.mjs, views folder, etc. ... and link to your initial app.mjs)
-
 ## Annotations / References Used
 
 [GetStream API Documents](https://getstream.io/chat/?adgroup=155988470535&matchtype=p&device=c&network=g&placement=&adposition=&utm_source=google&utm_medium=cpc&utm_campaign=20779301884&utm_term=build%20chat%20app&utm_content=680817547858&hsa_acc=6893682346&hsa_cam=20779301884&hsa_grp=155988470535&hsa_ad=680817547858&hsa_src=g&hsa_tgt=kwd-323226821902&hsa_kw=build%20chat%20app&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjwm5e5BhCWARIsANwm06gKb9-XfCCmFxw_BV7YLLffPOdGhZR8-W824eh9Pw28AUjJeScPX3gaAn-CEALw_wcB)
