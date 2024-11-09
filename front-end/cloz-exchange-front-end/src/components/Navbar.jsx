@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import  {Link, useMatch, useResolvedPath} from "react-router-dom"
-import Button from './Button'
 import { useEffect } from 'react';
 import './Navbar.css';
 
+
+// used this youtube video to understand how to create navbar and do the routing https://www.youtube.com/watch?v=I2UBjN5ER4s
 export default function Navbar(){
     const [button, setButton] = useState(true);
     const [click, setClick] = useState(true);
@@ -62,29 +63,5 @@ function CustomLink({to, children, ...props}){
     )
 }
 
-
-// const [click, setClick] = useState(false);
-    // const [button, setButton] = useState(true);
-    // const handleClick = () => {
-    //     setClick(!click);
-    // }
-    // const closeMobileMenu = () => {
-    //     setClick(false);
-    // }
-
-    // const showButton = () => {
-    //     if(window.innerWidth <= 960){
-    //         setButton(false);
-    //     }
-    //     else{
-    //         setButton(true);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     showButton();
-    //     window.addEventListener('resize', showButton);
-    //     return () => window.removeEventListener('resize', showButton);
-    //   }, []);
 
 

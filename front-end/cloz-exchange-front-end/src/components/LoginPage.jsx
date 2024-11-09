@@ -6,6 +6,8 @@ import axios from "axios";
 import VisiblePassword from "../components/VisiblePassword";
 import './LoginPage.css'
 
+
+// used this youtube video as a reference to how to create login page https://www.youtube.com/watch?v=vWcyisPuTOA
 const LoginPage = () => {
   const [errors, setErrors] = useState({ username: "", password: "" });
   const navigate = useNavigate();
@@ -84,6 +86,7 @@ const LoginPage = () => {
         <span className="error">{errors.username}</span>
       </div>
       <div>
+      {/* used this article to help show/hide password from the user https://stackoverflow.com/questions/71679442/show-hide-multiple-password-in-react-js */}
         <VisiblePassword
           name="password"
           disabled={false}
@@ -105,9 +108,6 @@ const LoginPage = () => {
           Login
         </button>
       </div>
-      <p>
-        Not a member? <a href="#">Register</a>
-      </p>
     </form>
   );
 };

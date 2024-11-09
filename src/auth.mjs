@@ -9,7 +9,9 @@ import session from 'express-session'
 
 // watch a youtube video on this, secure cookie session connection
 // testing
+// https://www.npmjs.com/package/bcrypt, used for creating hashes/salt 
 
+// https://github.com/nyu-csci-ua-0467-001-002-fall-2024/homework05-AndrewJ1234, referenced the authenticated sessions, will change later maybe due to security issues
 const startAuthenticatedSession = (req, user) => {
   return new Promise((fulfill, reject) => {
     req.session.regenerate((err) => {
@@ -24,6 +26,7 @@ const startAuthenticatedSession = (req, user) => {
 };
 
 // testing
+// https://github.com/nyu-csci-ua-0467-001-002-fall-2024/homework05-AndrewJ1234, referenced the authenticated sessions, will change later maybe due to security issues
 const endAuthenticatedSession = (req) => {
   return new Promise((fulfill, reject) => {
     req.session.destroy((err) => (err ? reject(err) : fulfill(null)));
@@ -40,11 +43,6 @@ const register = async (username, email, password, clothesToTrade, profession, s
     if (!password.match(passwordExpression)) {
       throw new Error("Password must be at least 8 characters long and include special symbols, uppercase letters, numbers, and lowercase letters.");
     }
-  
-    // const emailExpression = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    // if (!email.match(emailExpression)) {
-    //   throw new Error("Please provide a valid email address.");
-    // }
   
     const existingUser = await User.findOne({ username: username }).exec();
     if (existingUser) {

@@ -9,7 +9,7 @@ import Categories from './pages/Categories'
 import Home from './pages/Home';
 
 function App() {
-
+ // used https://www.youtube.com/watch?v=I2UBjN5ER4s to help me with the routing of the pages
   return (
     <>
     <Router>

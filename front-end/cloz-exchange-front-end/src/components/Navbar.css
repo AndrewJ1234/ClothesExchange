@@ -71,6 +71,7 @@ h1{
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* // https://www.youtube.com/watch?v=I2UBjN5ER4s referenced how to do a responsive screen for users using smaller device */
 @media screen and (max-width: 960px) {
     .menu-icon {
         display: block;

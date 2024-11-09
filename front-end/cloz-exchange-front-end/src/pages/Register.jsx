@@ -6,6 +6,7 @@ import VisiblePassword from "../components/VisiblePassword";
 import LoginPage from '../components/LoginPage';
 
 function Register() {
+
   const [isLogin, setIsLogin] = useState(true);
   const [fields, setFields] = useState({
     username: '',
@@ -16,28 +17,12 @@ function Register() {
   });
   const [errors, setErrors] = useState({});
 
-//   const handleFieldChange = (field, value) => {
-//     setFields({
-//       ...fields,
-//       [field]: value,
-//     });
-//   };
-
-//   async function runBackEnd() {
-//     const API = import.meta.env.VITE_BACKEND_URL;
-//     const response = await fetch(`${API}/register`);
-//     const url = import.meta.env.VITE_BACKEND_URL 
-//   ? `${import.meta.env.VITE_BACKEND_URL}/register` 
-//   : `http://localhost:3000/register`;
-// }
-
 const url = `${import.meta.env.VITE_BACKEND_URL2}/register`;
 console.log(url)
 
 // const url = 'http://localhost:20943/register';
 
-  
-
+ // https://stackoverflow.com/questions/50644976/react-button-onclick-redirect-page, used this article to find a way to navigate back to home screen when user logged in or registered
   // navigate back to home page when finished registering
   let navigate = useNavigate();
   const routeChange = () => {
@@ -61,81 +46,14 @@ console.log(url)
   // actually sends the data
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!username || !email || !password) {
-    //   console.log("Please fill out all fields.");
-    //   return;
-    // }
     if (handleValidation()) {
         sendData();
       } else {
         console.log("Form has errors.");
       }
-    // sendData();
   };
 
-//   const handleValidation = () => {
-//     const formFields = { ...fields };
-//     const formErrors = {};
-//     let formIsValid = true;
-
-//     //Name
-//     if (!formFields["username"]) {
-//       formIsValid = false;
-//       formErrors["username"] = "Cannot be empty";
-//     }
-
-//     if (typeof formFields["username"] !== "undefined") {
-//         if (!formFields["username"].match(/^[a-zA-Z0-9]{8,}$/)) {
-//             formIsValid = false;
-//             formErrors["username"] = "Username must be at least 8 characters and contain only letters and numbers";
-//         }
-//     }
-
-//     //Email
-//     if (!formFields["email"]) {
-//       formIsValid = false;
-//       formErrors["email"] = "Cannot be empty";
-//     }
-
-//     if (typeof formFields["email"] !== "undefined") {
-//       let lastAtPos = formFields["email"].lastIndexOf("@");
-//       let lastDotPos = formFields["email"].lastIndexOf(".");
-
-//       if (
-//         !(
-//           lastAtPos < lastDotPos &&
-//           lastAtPos > 0 &&
-//           formFields["email"].indexOf("@@") == -1 &&
-//           lastDotPos > 2 &&
-//           fields["email"].length - lastDotPos > 2
-//         )
-//       ) {
-//         formIsValid = false;
-//         formFields["email"] = "Email is not valid";
-//       }
-//     }
-
-//     // password
-//     if (!formFields["password"]) {
-//       formIsValid = false;
-//       formErrors["password"] = "Cannot be empty";
-//     }
-
-//     if (typeof formFields["password"] !== "undefined") {
-//         if (
-//             !formFields["password"].match(
-//               /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/
-//             )
-//         ) {
-//             formIsValid = false;
-//             formErrors["password"] = "Password must be at least 8 characters long, contain a number, and a special character (!@#$%^&*)";
-//         }
-//     }
-
-//     setErrors(formErrors);
-//     return formIsValid;
-//   };
-
+  // https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component, used this article to create a function that does client-side validation so that the user can register properly
 const handleValidation = () => {
     const formErrors = {};
     let formIsValid = true;
@@ -208,6 +126,8 @@ const handleValidation = () => {
     });
   };
 
+  // https://www.youtube.com/watch?v=vWcyisPuTOA, used this as a guide to build a register form page, mainly to understand how to use react
+  // https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component, for the fields and errors to show if the user has validated all information needed to register and create an account
   return (
     <div className="container">
       <div className="form-container">
@@ -248,16 +168,7 @@ const handleValidation = () => {
                 //   errors={errors}
                 />
                 <span className="error">{errors['password']}</span>
-                 {/* <span className="error">{errors["password"]}</span> */}
                  </div>
-                {/* <input
-                  type="password"
-                  placeholder="Password"
-                  onChange={(e) => handleChange("password", e.target.value)}
-                  value={fields["password"]}
-                />
-                <span className="error">{errors["password"]}</span> */}
-                {/* <input type="password" placeholder="Confirm Password" /> */}
 
                 <h4>What are you looking to trade?</h4>
                 <div className="clothingToTrade">
