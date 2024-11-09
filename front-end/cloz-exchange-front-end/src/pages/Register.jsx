@@ -14,6 +14,7 @@ function Register() {
     clothesToTrade: [],
     profession: ''
   });
+  const [errors, setErrors] = useState({});
 
 //   const handleFieldChange = (field, value) => {
 //     setFields({
@@ -22,9 +23,20 @@ function Register() {
 //     });
 //   };
 
-  const [errors, setErrors] = useState({});
+//   async function runBackEnd() {
+//     const API = import.meta.env.VITE_BACKEND_URL;
+//     const response = await fetch(`${API}/register`);
+//     const url = import.meta.env.VITE_BACKEND_URL 
+//   ? `${import.meta.env.VITE_BACKEND_URL}/register` 
+//   : `http://localhost:3000/register`;
+// }
 
-  const url = `http://localhost:20943/register`;
+const url = `${import.meta.env.VITE_BACKEND_URL2}/register`;
+console.log(url)
+
+// const url = 'http://localhost:20943/register';
+
+  
 
   // navigate back to home page when finished registering
   let navigate = useNavigate();
