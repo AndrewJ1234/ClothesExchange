@@ -9,6 +9,14 @@ Special Instructions for Using Form and / or Login
 ---
 (TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
 
+My App uses React and Vite
+
+The application should start with the following command:
+
+```bash
+npx pm2 start "npx serve -s dist -l 20942" --name cloz-exchange-front-end
+```
+
 ### When registering:
 - **Username**: Must be at least 8 characters long and only contain letters (A-Z, a-z) and numbers (0-9).
 - **Email**: Must not be empty. An `@` symbol must appear before the `.` symbol, and there must be at least 2 characters after the last `.` in the email.
