@@ -38,6 +38,7 @@ URL to github that shows line of code where research topic(s) are used / impleme
 --- 
 (TODO: add link to github url that shows line or lines of code that demonstrate in progress work on at least one research topic)
 
+### React Research Topic
 [Login Page in React](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/5d936e478f6d5afdba39fc7956aec5a4b821009c/front-end/cloz-exchange-front-end/src/components/LoginPage.jsx#L11C1-L115C26)
 
 [Navbar in React](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/5d936e478f6d5afdba39fc7956aec5a4b821009c/front-end/cloz-exchange-front-end/src/components/Navbar.jsx#L8C1-L64C2)
@@ -47,6 +48,8 @@ URL to github that shows line of code where research topic(s) are used / impleme
 [App.jsx, that contains all the routing of pages](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/5d936e478f6d5afdba39fc7956aec5a4b821009c/front-end/cloz-exchange-front-end/src/App.jsx#L11C1-L31C19)
 
 [Registration page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/5d936e478f6d5afdba39fc7956aec5a4b821009c/front-end/cloz-exchange-front-end/src/pages/Register.jsx#L8C1-L256C2)
+
+### Axios Research Topic
 
 [Using axios to send data from React to Express when registering](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/5d936e478f6d5afdba39fc7956aec5a4b821009c/front-end/cloz-exchange-front-end/src/pages/Register.jsx#L34C3-L45C5)
 
