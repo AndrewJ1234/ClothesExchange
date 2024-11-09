@@ -8,7 +8,7 @@ Repository Link
 Special Instructions for Using Form and / or Login
 ---
 
-# Starting the Application After Cloning from GitHub
+### Starting the Application After Cloning from GitHub
 
 After cloning the application, use the following steps to start it:
 
