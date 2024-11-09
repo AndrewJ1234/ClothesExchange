@@ -32,7 +32,7 @@ const endAuthenticatedSession = (req) => {
     req.session.destroy((err) => (err ? reject(err) : fulfill(null)));
   });
 };
-
+// https://github.com/nyu-csci-ua-0467-001-002-fall-2024/homework05-AndrewJ1234, referenced the register and login function
 const register = async (username, email, password, clothesToTrade, profession, slug) => {
     const usernameExpressions = /[a-zA-Z0-9]{8,}$/;
     if (!username.match(usernameExpressions)) {
