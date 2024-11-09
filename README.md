@@ -232,3 +232,18 @@ An Example List with Embedded Items:
 
 [Multi-Factor Authentication with Google](https://esketchers.com/implementing-2fa-with-mern-stack/)
 
+[React Login Tutorial](https://www.youtube.com/watch?v=vWcyisPuTOA)
+
+[javascript regex for special characters](https://stackoverflow.com/questions/18812317/javascript-regex-for-special-characters?newreg=a702b9efd3ef460dbb38b461d3210fff)
+
+[How create a field in mongodb schema with pre-defined values, and make the user choose the value with a radio button](https://stackoverflow.com/questions/28566996/how-create-a-field-in-mongodb-schema-with-pre-defined-values-and-make-the-user)
+
+
+[react button onClick redirect page](https://stackoverflow.com/questions/50644976/react-button-onclick-redirect-page)
+
+[How do I add validation to the form in my React component?](https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component)
+
+[Show hide multiple password in react js](https://stackoverflow.com/questions/71679442/show-hide-multiple-password-in-react-js)
+
+
+[react-login-page](https://www.npmjs.com/package/react-login-page)
