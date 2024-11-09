@@ -20,6 +20,7 @@ Special Instructions for Using Form and / or Login
 
 ### Additional Instructions:
 - Clicking on **Home** again when you are in `http://linserv1.cims.nyu.edu:20942/:username` allows you to re-register for another account or re-sign into your account.
+- Click on Login and Register button at the bottom of the form to switch between the login and register form.
 
 
 ### Starting the Application After Cloning from GitHub (My application uses React Vite)
