@@ -7,9 +7,6 @@ Repository Link
 
 Special Instructions for Using Form and / or Login
 ---
-(TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
-
-My App uses React and Vite
 
 # Starting the Application After Cloning from GitHub
 
