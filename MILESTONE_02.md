@@ -11,11 +11,25 @@ Special Instructions for Using Form and / or Login
 
 My App uses React and Vite
 
-The application should start with the following command:
+# Starting the Application After Cloning from GitHub
 
-```bash
-npx pm2 start "npx serve -s dist -l 20942" --name cloz-exchange-front-end
-```
+After cloning the application, use the following steps to start it:
+
+1. **Navigate to the project directories** and install/build the necessary components:
+
+    ```bash
+    cd frontend
+    cd cloz-exchange-front-end
+    npm run build
+    npm install serve
+    ```
+
+2. **Run the application** using `pm2` to serve the frontend on port `20942`:
+
+    ```bash
+    npx pm2 start "npx serve -s dist -l 20942" --name cloz-exchange-front-end
+    ```
+
 
 ### When registering:
 - **Username**: Must be at least 8 characters long and only contain letters (A-Z, a-z) and numbers (0-9).
