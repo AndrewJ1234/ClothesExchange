@@ -10,10 +10,12 @@ import Home from './pages/Home';
 
 function App() {
  // used https://www.youtube.com/watch?v=I2UBjN5ER4s to help me with the routing of the pages
+ const showNavbar = location.pathname !== '/';
   return (
     <>
     <Router>
-      <Navbar/>
+      {/* <Navbar/> */}
+      {showNavbar && <Navbar />}
         <Routes>
         {/* element={<Home/>} */}
           <Route path='/' element={<Register/>} />
