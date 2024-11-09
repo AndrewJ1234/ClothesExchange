@@ -1,11 +1,14 @@
 import 'dotenv/config.js'
-import './config.mjs'
-import './src/db.mjs';
-import * as auth from './src/auth.mjs'
 import express from 'express'
+
 import path from 'path'
 import { fileURLToPath } from 'url';
 import cors from 'cors';
+
+import './config.mjs'
+import './src/db.mjs';
+import * as auth from './src/auth.mjs'
+
 import mongoose from 'mongoose';
 import sanitize from 'mongo-sanitize';
 import axios from 'axios'
