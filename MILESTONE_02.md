@@ -8,7 +8,21 @@ Repository Link
 Special Instructions for Using Form and / or Login
 ---
 
-### Starting the Application After Cloning from GitHub
+### When registering:
+- **Username**: Must be at least 8 characters long and only contain letters (A-Z, a-z) and numbers (0-9).
+- **Email**: Must not be empty. An `@` symbol must appear before the `.` symbol, and there must be at least 2 characters after the last `.` in the email.
+- **Password**: Must be at least 8 characters long, and contain at least one number and one special character (`!@#$%^&*`).
+- **Clothing**: Select at least one clothing piece from the list of options (pants, jackets, shirts).
+- **Profession**: Select one profession from the following options:
+  - Amateur
+  - In-training
+  - Professional
+
+### Additional Instructions:
+- Clicking on **Home** again when you are in `http://linserv1.cims.nyu.edu:20942/:username` allows you to re-register for another account or re-sign into your account.
+
+
+### Starting the Application After Cloning from GitHub (My application uses React Vite)
 
 After cloning the application, use the following steps to start it:
 
@@ -26,20 +40,6 @@ After cloning the application, use the following steps to start it:
     ```bash
     npx pm2 start "npx serve -s dist -l 20942" --name cloz-exchange-front-end
     ```
-
-
-### When registering:
-- **Username**: Must be at least 8 characters long and only contain letters (A-Z, a-z) and numbers (0-9).
-- **Email**: Must not be empty. An `@` symbol must appear before the `.` symbol, and there must be at least 2 characters after the last `.` in the email.
-- **Password**: Must be at least 8 characters long, and contain at least one number and one special character (`!@#$%^&*`).
-- **Clothing**: Select at least one clothing piece from the list of options (pants, jackets, shirts).
-- **Profession**: Select one profession from the following options:
-  - Amateur
-  - In-training
-  - Professional
-
-### Additional Instructions:
-- Clicking on **Home** again when you are in `http://linserv1.cims.nyu.edu:20942/:username` allows you to re-register for another account or re-sign into your account.
 
 URL for deployed site
 ---
