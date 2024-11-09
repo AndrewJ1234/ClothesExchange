@@ -36,7 +36,6 @@ URL for form result
 
 URL to github that shows line of code where research topic(s) are used / implemented
 --- 
-(TODO: add link to github url that shows line or lines of code that demonstrate in progress work on at least one research topic)
 
 ### React Research Topic
 [Login Page in React](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/5d936e478f6d5afdba39fc7956aec5a4b821009c/front-end/cloz-exchange-front-end/src/components/LoginPage.jsx#L11C1-L115C26)
