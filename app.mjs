@@ -1,3 +1,4 @@
+import 'dotenv/config.js'
 import './config.mjs'
 import './src/db.mjs';
 import * as auth from './src/auth.mjs'
@@ -20,22 +21,21 @@ app.use(express.json());
 
 // cors might block requests
 app.use(cors());
-// app.use(cors({ origin: `http://localhost:${process.env.LSN || 3000}` }));
 app.use(express.static(path.join(__dirname, 'front-end/cloz-exchange-front-end/')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'front-end/cloz-exchange-front-end/', 'index.html'));
   });
 
-// load register page
-app.get('/register', (req, res) => {
-    res.render('register');
-  });
+// // load register page
+// app.get('/register', (req, res) => {
+//     res.render('register');
+//   });
 
-// load login page
-app.get('/login', (req, res) => {
-    res.render('login');
-});
+// // load login page
+// app.get('/login', (req, res) => {
+//     res.render('login');
+// });
 
 
 app.use(session({
@@ -92,11 +92,17 @@ app.post('/register', async (req, res) => {
     }
 });
 
+app.get('/', async (req, res) => {
+    // res.redirect('/');
+    res.send('pwease work');
+})
+
 // app.listen(process.env.PORT || 3000), () => {
 //     console.log(`Server is running on port ${process.env.PORT || 3000}`);
 // };
 
 
-app.listen(3000), () => {
-    console.log(`Server is running on port http://localhost:3000`);
-};
+app.listen(process.env.EXPRESS, () => {
+    console.log(`Server is running on http://localhost:${process.env.EXPRESS}`);
+});
+

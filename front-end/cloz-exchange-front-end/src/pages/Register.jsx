@@ -24,7 +24,7 @@ function Register() {
 
   const [errors, setErrors] = useState({});
 
-  const url = `http://localhost:3000/register`;
+  const url = `http://localhost:20943/register`;
 
   // navigate back to home page when finished registering
   let navigate = useNavigate();
