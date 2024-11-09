@@ -127,7 +127,6 @@ const handleValidation = () => {
   };
 
   // https://www.youtube.com/watch?v=vWcyisPuTOA, used this as a guide to build a register form page, mainly to understand how to use react
-  // https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component, for the fields and errors to show if the user has validated all information needed to register and create an account
   return (
     <div className="container">
       <div className="form-container">
