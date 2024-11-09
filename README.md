@@ -217,8 +217,10 @@ An Example List with Embedded Items:
     * send an email to the user's email to verify that they are indeed the user
 * (2 points) Integrate Messaging Service
     * integrate GetStream API to enable messaging functionality
+* (2 points) Connect React to Express via Axios
+    * send data back and forth to React and Express servers and vice versa using Axios
   
-10 points total out of 8 required points
+12 points total out of 8 required points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
@@ -237,7 +239,6 @@ An Example List with Embedded Items:
 [javascript regex for special characters](https://stackoverflow.com/questions/18812317/javascript-regex-for-special-characters?newreg=a702b9efd3ef460dbb38b461d3210fff)
 
 [How create a field in mongodb schema with pre-defined values, and make the user choose the value with a radio button](https://stackoverflow.com/questions/28566996/how-create-a-field-in-mongodb-schema-with-pre-defined-values-and-make-the-user)
-
 
 [react button onClick redirect page](https://stackoverflow.com/questions/50644976/react-button-onclick-redirect-page)
 
