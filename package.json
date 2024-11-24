@@ -16,14 +16,16 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "env": "^0.0.2",
-    "eslint": "^9.14.0",
+    "eslint": "^9.15.0",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
     "mongo-sanitize": "^1.1.0",
     "mongodb": "^6.10.0",
-    "mongoose": "^8.8.0",
+    "mongoose": "^8.8.2",
     "mongoose-slug-plugin": "^2.1.0",
-    "react-hook-form": "^7.53.1"
+    "mongoose-url-slugs": "^1.0.2",
+    "react-hook-form": "^7.53.2",
+    "stream-chat": "^8.45.1"
   },
   "devDependencies": {
     "chai": "^5.1.2",

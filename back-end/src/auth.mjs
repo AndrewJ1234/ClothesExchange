@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
-import { User, Shop, Chat } from "./db.mjs";
+import { User, Shop } from './models/db.mjs';
 import session from 'express-session'
 // const User = mongoose.model("User");
 // const User = mongoose.model("User");

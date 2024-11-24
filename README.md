@@ -206,8 +206,6 @@ An Example List with Embedded Items:
 6. as a user, I can preview other user's shops
 7. as a user, I can trade/barter my clothes for other user's clothes
 8. as a user, I can chat/message other users
-9. as a user, I can leave reviews on other users' shops to provide feedback on items and services.
-10. as a user, I can view the reviews other users have left on my shops.
 
 ## Research Topics
 
@@ -215,12 +213,10 @@ An Example List with Embedded Items:
     * used React.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
 * (2 points) Multi-Factor Authentication
     * send an email to the user's email to verify that they are indeed the user
-* (2 points) Integrate Messaging Service
-    * integrate GetStream API to enable messaging functionality
 * (2 points) Connect React to Express via Axios
     * send data back and forth to React and Express servers and vice versa using Axios
   
-12 points total out of 8 required points
+10 points total out of 8 required points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
@@ -250,3 +246,11 @@ An Example List with Embedded Items:
 [react-login-page](https://www.npmjs.com/package/react-login-page)
 
 [localhost:5173/login](https://locall.host/5173-login/)
+
+[Implementing Slugs in React using useParams Hook.](https://www.linkedin.com/pulse/implementing-slugs-react-using-useparams-hook-adyatan-guragain-1jmsc/)
+
+[How To Make Complete E-Commerce Website Using React JS | React JS Ecommerce Project 2024](https://www.youtube.com/watch?v=ZF73dpgRrWI)
+
+[Login and Registration using MERN Stack | Mongo, Express, React and Node Authentication](https://www.youtube.com/watch?v=ZVyIIyZJutM)
+
+[How To Make Complete E-Commerce Website Using React JS | React JS Ecommerce Project 2024](https://www.youtube.com/watch?v=ZF73dpgRrWI&t=17215s)
