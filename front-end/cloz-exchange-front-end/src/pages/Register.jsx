@@ -1,12 +1,13 @@
-import "./Register.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import VisiblePassword from "../components/VisiblePassword";
-import LoginPage from '../components/LoginPage';
+import LoginPage from './LoginPage';
+import { useLocalStorage } from '../components/LocalStorage';
 
-function Register() {
 
+// https://www.youtube.com/watch?v=ZVyIIyZJutM
+function Register(onSignIn) {
   const [isLogin, setIsLogin] = useState(true);
   const [fields, setFields] = useState({
     username: '',
@@ -15,50 +16,58 @@ function Register() {
     clothesToTrade: [],
     profession: ''
   });
+
+   // Use useLocalStorage to store username and slug
+   const { saveItem: saveUsername } = useLocalStorage('username', '');
+   const { saveItem: saveSlug } = useLocalStorage('slug', '');
+
   const [errors, setErrors] = useState({});
 
-const url = `${import.meta.env.VITE_BACKEND_URL2}/register`;
-console.log(url)
+  const url = `${import.meta.env.VITE_BACKEND_URL2}/api/users/register`;
 
-// const url = 'http://localhost:20943/register';
-
- // https://stackoverflow.com/questions/50644976/react-button-onclick-redirect-page, used this article to find a way to navigate back to home screen when user logged in or registered
-  // navigate back to home page when finished registering
   let navigate = useNavigate();
-  const routeChange = () => {
-    let path = (`/:${fields['username']}`);
-    navigate(path);
-  };
-
-  // sends data to the backend
   const sendData = () => {
     axios
       .post(url, fields)
       .then((res) => {
         console.log("Data sent successfully:", res.data);
-        navigate(`/:${fields['username']}`);
+        const {slug, username: loggedInUsername } = res.data;
+        // localStorage.setItem('username', slug);
+        saveUsername(loggedInUsername);
+        saveSlug(slug);
+        if (slug) {
+          // Navigate to the user's page
+          navigate(`/${slug}`);
+        } else {
+          console.error('Slug is undefined');
+        }
+
+        if (onSignIn) {
+          onSignIn({ username, slug });
+        } else {
+          console.error("onSignIn is not defined");
+        }
+
       })
       .catch((err) => {
-        console.log(fields)
+        console.log(fields);
         console.log("Error:", err.response ? err.response.data : err.message);
       });
   };
-  // actually sends the data
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (handleValidation()) {
-        sendData();
-      } else {
-        console.log("Form has errors.");
-      }
+      sendData();
+    } else {
+      console.log("Form has errors.");
+    }
   };
 
-  // https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component, used this article to create a function that does client-side validation so that the user can register properly
-const handleValidation = () => {
+  const handleValidation = () => {
     const formErrors = {};
     let formIsValid = true;
-  
-    // Name validation
+
     if (!fields.username) {
       formIsValid = false;
       formErrors.username = "Cannot be empty";
@@ -66,8 +75,7 @@ const handleValidation = () => {
       formIsValid = false;
       formErrors.username = "Username must be at least 8 characters and contain only letters and numbers";
     }
-  
-    // Email validation
+
     if (!fields.email) {
       formIsValid = false;
       formErrors.email = "Cannot be empty";
@@ -79,8 +87,7 @@ const handleValidation = () => {
         formErrors.email = "Email is not valid";
       }
     }
-  
-    // Password validation
+
     if (!fields.password) {
       formIsValid = false;
       formErrors.password = "Cannot be empty";
@@ -88,7 +95,7 @@ const handleValidation = () => {
       formIsValid = false;
       formErrors.password = "Password must be at least 8 characters long, contain a number, and a special character (!@#$%^&*)";
     }
-  
+
     setErrors(formErrors);
     return formIsValid;
   };
@@ -100,151 +107,144 @@ const handleValidation = () => {
     });
   };
 
-  const contactSubmit = (e) => {
-    e.preventDefault();
-    if (handleValidation()) {
-      alert("Form submitted");
-    } else {
-      alert("Form has errors.");
-    }
-  };
-
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    setFields((prevFields) => ({
-      ...prevFields,
-      clothesToTrade: checked
-        ? [...prevFields.clothesToTrade, value]
-        : prevFields.clothesToTrade.filter((item) => item !== value)
-    }));
-  };
-
-  const handleRadioButton = (e) => {
-    setFields({
-      ...fields,
-      profession: e.target.value
-    });
-  };
-
-  // https://www.youtube.com/watch?v=vWcyisPuTOA, used this as a guide to build a register form page, mainly to understand how to use react
   return (
-    <div className="container">
-      <div className="form-container">
+    <div className="flex items-center justify-center min-h-screen bg-white">
+      <div className="w-full max-w-lg  text-black p-6 bg-white border border-black rounded-lg shadow-md overflow-auto">
         {isLogin ? (
           <>
-          <LoginPage/>
+            <LoginPage onSignIn={onSignIn} />
           </>
         ) : (
           <>
-            <form
-              method="POST"
-              action="register"
-              onSubmit={(e) => contactSubmit(e)}
-            >
-              <div className="form">
-                <h2>Register</h2>
-                <input
-                  type="text"
-                  placeholder="Username"
-                  onChange={(e) => handleChange("username", e.target.value)}
-                  value={fields["username"]}
-                />
-                <span className="error">{errors["username"]}</span>
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-6">
+                <h2 className="text-2xl font-semibold text-black text-center">Register</h2>
 
-                <input
-                  type="email"
-                  placeholder="Email"
-                  onChange={(e) => handleChange("email", e.target.value)}
-                  value={fields["email"]}
-                />
-                <span className="error">{errors["email"]}</span>
-                <div className='visiblePassSection'>
-                <VisiblePassword
-                  name="password"
-                  disabled={false}
-                  value={fields["password"]}
-                  handleChange={handleChange}
-                //   errors={errors}
-                />
-                <span className="error">{errors['password']}</span>
-                 </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    onChange={(e) => handleChange("username", e.target.value)}
+                    value={fields["username"]}
+                    className="w-full p-3 border bg-white border-black rounded-md focus:outline-none"
+                  />
+                  <span className="text-red-500 text-sm">{errors["username"]}</span>
+                </div>
 
-                <h4>What are you looking to trade?</h4>
-                <div className="clothingToTrade">
-                  <div className="clothingToTrade">
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    value={fields["email"]}
+                    className="w-full p-3 border bg-white border-black rounded-md focus:outline-none"
+                  />
+                  <span className="text-red-500 text-sm">{errors["email"]}</span>
+                </div>
+
+                <div className="space-y-2">
+                  <VisiblePassword
+                    name="password"
+                    disabled={false}
+                    value={fields["password"]}
+                    handleChange={handleChange}
+                  />
+                  <span className="text-red-500 text-sm">{errors['password']}</span>
+                </div>
+
+                <h4 className="mt-4 text-lg font-semibold text-black">What are you looking to trade?</h4>
+                <div className="space-y-2">
+                  <label className="block text-black">
                     <input
                       type="checkbox"
                       name="fashion_position"
                       value="pants"
-                      onChange={handleCheckboxChange}
+                      onChange={(e) => handleChange('clothesToTrade', e.target.value)}
+                      className="mr-2"
                     />
-                    <label htmlFor="pants">Pants</label>
-                    <br />
+                    Pants
+                  </label>
+                  <label className="block text-black">
                     <input
                       type="checkbox"
                       name="fashion_position"
                       value="shirts"
-                      onChange={handleCheckboxChange}
+                      onChange={(e) => handleChange('clothesToTrade', e.target.value)}
+                      className="mr-2"
                     />
-                    <label htmlFor="shirts">Shirts</label>
-                    <br />
+                    Shirts
+                  </label>
+                  <label className="block text-black">
                     <input
                       type="checkbox"
                       name="fashion_position"
                       value="jackets"
-                      onChange={handleCheckboxChange}
+                      onChange={(e) => handleChange('clothesToTrade', e.target.value)}
+                      className="mr-2"
                     />
-                    <label htmlFor="jackets">Jackets</label>
-                    <br />
-                  </div>
+                    Jackets
+                  </label>
                 </div>
 
-                <h4>
+                <h4 className="mt-4 text-lg font-semibold text-black">
                   Are you interested in fashion or involved in clothing design?
                 </h4>
-                <div className="fashion_position">
-                  <input
-                    type="radio"
-                    name="fashion_position"
-                    id="amateur"
-                    onChange={handleRadioButton}
-                    value="amateur"
-                  />
-                  <label htmlFor="amateur">Amateur</label>
-                  <br></br>
-                  <input
-                    type="radio"
-                    name="fashion_position"
-                    id="in_training"
-                    onChange={handleRadioButton}
-                    value="in_training"
-                  />
-                  <label htmlFor="in_training">In Training</label>
-                  <br></br>
-                  <input
-                    type="radio"
-                    name="fashion_position"
-                    id="professional"
-                    onChange={handleRadioButton}
-                    value="professional"
-                  />
-                  <label htmlFor="professional">Professional</label>
-                  <br></br>
-                  <button onClick={handleSubmit}>Register</button>
+                <div className="space-y-2">
+                  <label className="block text-black">
+                    <input
+                      type="radio"
+                      name="profession"
+                      onChange={(e) => handleChange("profession", e.target.value)}
+                      value="amateur"
+                      className="mr-2"
+                    />
+                    Amateur
+                  </label>
+                  <label className="block text-black">
+                    <input
+                      type="radio"
+                      name="profession"
+                      onChange={(e) => handleChange("profession", e.target.value)}
+                      value="in_training"
+                      className="mr-2"
+                    />
+                    In Training
+                  </label>
+                  <label className="block text-black">
+                    <input
+                      type="radio"
+                      name="profession"
+                      onChange={(e) => handleChange("profession", e.target.value)}
+                      value="professional"
+                      className="mr-2"
+                    />
+                    Professional
+                  </label>
+                </div>
+
+                <div className="mt-6">
+                  <button
+                    type="submit"
+                    className="w-full p-3 border border-black text-black bg-white rounded-md hover:bg-gray-100 focus:outline-none"
+                  >
+                    Register
+                  </button>
                 </div>
               </div>
             </form>
           </>
         )}
-        <div className="form-toggle">
+
+        <div className="mt-6 text-center">
           <button
-            className={isLogin ? "active" : ""}
+            className={isLogin ? "text-purple-500 font-semibold bg-white border-gray-700": ""}
             onClick={() => setIsLogin(true)}
           >
             Login
           </button>
+          <span className="mx-4">|</span>
           <button
-            className={!isLogin ? "active" : ""}
+            className={!isLogin ? "text-purple-500 font-semibold bg-white border-gray-700" : ""}
             onClick={() => setIsLogin(false)}
           >
             Register
