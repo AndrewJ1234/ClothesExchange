@@ -1,5 +1,6 @@
 import React from 'react';
 
+// https://stackoverflow.com/questions/62536758/react-usestate-stuck-after-setting-localstorage-as-initial-state used this code for localstorage
 function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue);
 
