@@ -215,8 +215,10 @@ An Example List with Embedded Items:
     * send an email to the user's email to verify that they are indeed the user
 * (2 points) Connect React to Express via Axios
     * send data back and forth to React and Express servers and vice versa using Axios
+* (1 point) Tailwind CSS
+    * use Tailwind CSS; it's a challenging framework to learn
   
-10 points total out of 8 required points
+11 points total out of 8 required points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
@@ -241,7 +243,6 @@ An Example List with Embedded Items:
 [How do I add validation to the form in my React component?](https://stackoverflow.com/questions/41296668/how-do-i-add-validation-to-the-form-in-my-react-component)
 
 [Show hide multiple password in react js](https://stackoverflow.com/questions/71679442/show-hide-multiple-password-in-react-js)
-
 
 [react-login-page](https://www.npmjs.com/package/react-login-page)
 
