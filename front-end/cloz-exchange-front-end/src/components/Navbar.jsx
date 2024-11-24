@@ -48,6 +48,7 @@ export default function Navbar(){
         return () => window.removeEventListener('resize', showButton);
     }, []);
     return(
+        // https://www.youtube.com/watch?v=ZF73dpgRrWI used this code for navbar and to get navbar tailwind css
         <>
             <nav className="navbar">
                 <div className="flex justify-between items-center w-full">
