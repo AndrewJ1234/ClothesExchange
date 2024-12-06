@@ -29,17 +29,28 @@ const [currentItem, setCurrentItem] = useState(null);
 
   const sendData = (e) => {
     axios.post(url, {user: tradedUserClothes, traderUser: currentTrader, traderUserClothes: currentItem})
-    .then((response) => console.log('response', response))
-    .catch((error) => console.error(error));
+    // console.log('response', response);
+    // .catch((error) => console.error(error));
+  }
+
+  const navigateSendData = (axiosCall, navigation) => {
+    return async (e) => {
+      e.preventDefault();
+      try{
+        await axiosCall();
+        navigation();
+      }
+      catch(error){
+        console.error(error);
+      }
+    }
   }
   
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    sendData();
+  const navigateToTrades = () => {
     navigate(`/trades/${username}`); // navigates to the trade link
   }
 
+const handleSubmit = navigateSendData(sendData, navigateToTrades);
 
   useEffect(() => {
     const fetchProducts = async () => {

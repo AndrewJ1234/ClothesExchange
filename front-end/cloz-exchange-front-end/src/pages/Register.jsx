@@ -6,7 +6,7 @@ import LoginPage from './LoginPage';
 import { useLocalStorage } from '../components/LocalStorage';
 
 
-// https://www.youtube.com/watch?v=ZVyIIyZJutM
+// https://www.youtube.com/watch?v=ZVyIIyZJutM used as reference for creating register/login page
 function Register(onSignIn) {
   const [isLogin, setIsLogin] = useState(true);
   const [fields, setFields] = useState({
