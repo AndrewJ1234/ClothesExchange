@@ -9,6 +9,7 @@ import * as auth from './src/auth.mjs';
 import userRoutes from './src/routes/user.mjs';
 import categories from './src/routes/categories.mjs'
 import myshops from './src/routes/myshops.mjs'
+import trades from './src/routes/trade.mjs'
 import session from 'express-session';
 import mongoose from 'mongoose';
 import sanitize from 'mongo-sanitize';
@@ -38,7 +39,9 @@ app.use(session({
 
 // Add user routes
 app.use('/api/users/', userRoutes);
-app.use('/api/shops', myshops)
+app.use('/api/shops', myshops);
+app.use('/api/categories', categories);
+app.use('/api/', trades);
 
 // Debug logging for requests
 app.use((req, res, next) => {

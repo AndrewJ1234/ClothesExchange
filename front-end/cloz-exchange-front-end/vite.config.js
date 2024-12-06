@@ -22,5 +22,6 @@ export default defineConfig({
         changeOrigin: true, // Ensure the host header matches the target
       },
     },
+    port: 20942
   },
 });

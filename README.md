@@ -67,56 +67,8 @@ An Example List with Embedded Items:
 
 <div align="center">
 
-### /shop/create - **Page for creating a new shop**
-![shop create](documentation/create-new-shop.png)  
-
-
-</div>
-
-<div align="center">
-
 ### /shops - **Page for showing all the shops**
 ![shops](documentation/my-shops.png)  
-
-
-</div>
-
-<div align="center">
-
-### /shop/slug - **Page for showing specific shops**
-![user's specific shop](documentation/my-shop-slug.png)  
-
-
-</div>
-
-<div align="center">
-
-### /shop/slug/reviews - **Page for showing specific shop's reviews**  
-![user's specific shop's reviews](documentation/my-shop-reviews-slug.png)  
-
-
-</div>
-
-<div align="center">
-
-### /chats/ - **Page for showing all the chats**
-![all of your user chats](documentation/chats.png)  
-
-
-</div>
-
-<div align="center">
-
-### /chat/slug - **Page for showing specific chats**
-![specific chat](documentation/chat-slug.png)  
-
-
-</div>
-
-<div align="center">
-
-### /edit/clothes/slug - **Page for editing a piece of clothing**
-![editing a specific piece of clothing](documentation/edit-clothes-slug.png)  
 
 
 </div>
@@ -163,22 +115,6 @@ An Example List with Embedded Items:
 
 <div align="center">
 
-### /my/shop/review/slug - **Other user's review on your specific shop**
-![user's review on your shop](documentation/my-specific-review.png)  
-
-
-</div>
-
-<div align="center">
-
-### /submit/review/slug - **You submit review about another user**
-![you submit review](documentation/submit-review-slug.png)  
-
-
-</div>
-
-<div align="center">
-
 ### /trade/clothes/slug - **Trade your clothes for another piece of clothing**
 ![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)  
 
@@ -187,7 +123,7 @@ An Example List with Embedded Items:
 
 <div align="center">
 
-### /trade/slug - **Browse through clothes to trade from a particular category of clothing**
+### /trades/slug - **Browse through clothes to trade from a particular category of clothing**
 ![browse through clothes to trade](documentation/trade-slug-category.png)  
 
 
@@ -200,37 +136,32 @@ An Example List with Embedded Items:
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create a new shop or multiple shops
-4. as a user, I can view all of the shops I've created in a single list
-5. as a user, I can add/delete items to an existing shop
-6. as a user, I can preview other user's shops
+3. as a user, I can create a new shop
+4. as a user, I can view my shop
+5. as a user, I can add items to my shop shop
+6. as a user, I can preview other user's items
 7. as a user, I can trade/barter my clothes for other user's clothes
-8. as a user, I can chat/message other users
 
 ## Research Topics
 
 * (6 points) React.js
     * used React.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
-* (2 points) Multi-Factor Authentication
-    * send an email to the user's email to verify that they are indeed the user
 * (2 points) Connect React to Express via Axios
     * send data back and forth to React and Express servers and vice versa using Axios
 * (1 point) Tailwind CSS
     * use Tailwind CSS; it's a challenging framework to learn
   
-11 points total out of 8 required points
+9 points total out of 8 required points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
 ## Annotations / References Used
 
-[GetStream API Documents](https://getstream.io/chat/?adgroup=155988470535&matchtype=p&device=c&network=g&placement=&adposition=&utm_source=google&utm_medium=cpc&utm_campaign=20779301884&utm_term=build%20chat%20app&utm_content=680817547858&hsa_acc=6893682346&hsa_cam=20779301884&hsa_grp=155988470535&hsa_ad=680817547858&hsa_src=g&hsa_tgt=kwd-323226821902&hsa_kw=build%20chat%20app&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjwm5e5BhCWARIsANwm06gKb9-XfCCmFxw_BV7YLLffPOdGhZR8-W824eh9Pw28AUjJeScPX3gaAn-CEALw_wcB)
-
 [React Website Tutorial](https://www.youtube.com/watch?v=I2UBjN5ER4s)
 
 [Bcrypt Documents](https://www.npmjs.com/package/bcrypt)
 
-[Multi-Factor Authentication with Google](https://esketchers.com/implementing-2fa-with-mern-stack/)
+<!-- [Multi-Factor Authentication with Google](https://esketchers.com/implementing-2fa-with-mern-stack/) -->
 
 [React Login Tutorial](https://www.youtube.com/watch?v=vWcyisPuTOA)
 
