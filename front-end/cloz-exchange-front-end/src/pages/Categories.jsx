@@ -102,10 +102,13 @@ const [currentItem, setCurrentItem] = useState(null);
   allClothesArr.push({ inventory: pantsArr, category: "Pants" });
 
   // sort the categories
-  allClothesArr.sort(compareNumbers);
-  function compareNumbers(a, b) {
+  
+  function sortByLen(){
+    return function compareNumbers(a, b) {
     return a.length - b.length;
   }
+}
+allClothesArr.sort(sortByLen());
 
   // console.log(allClothesArr);
 
