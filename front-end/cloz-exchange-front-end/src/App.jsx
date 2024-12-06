@@ -2,13 +2,10 @@ import { useState, useEffect,  } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import {Router, Routes, Route, useLocation, useParams, useNavigate } from "react-router-dom";
-// import Chats from './pages/Chats'
 import MyShops from "./pages/MyShops";
 import Register from "./pages/Register";
 import Categories from "./pages/Categories";
 import Home from "./pages/Home";
-import UserShops from './pages/UserShop'
-import UserCategories from './pages/UserCategories'
 import Product from './pages/Product'
 import LoginPage from "./pages/LoginPage";
 import Trades from './pages/Trades'
@@ -19,6 +16,13 @@ function App() {
   const navigate = useNavigate();
   const [username, setUsername] = useState(localStorage.getItem("username") || "");
   useEffect(() => {
+    async function getUsername(){
+      const res = await fetch('/login');
+      const data = await res.json();
+      setUsername(data.slug);
+    }
+    console.log('slug', username);
+    getUsername();
     const storedUsername = localStorage.getItem("username");
     if (storedUsername && storedUsername !== username) {
       setUsername(storedUsername); // Sync state with localStorage
@@ -49,7 +53,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categories/:username" element={<Categories />} />
           <Route path="/myshops/:username" element={<MyShops />} />
-          <Route path="/product" element={<Product />} />
+          {/* <Route path="/product" element={<Product />} /> */}
           <Route path="/login" element={<LoginPage onSignIn={handleSignIn}/>} />
           <Route path="/trades/:username" element={<Trades />} />
           <Route path="/register" element={<Register onSignIn={handleSignIn}/>} />
