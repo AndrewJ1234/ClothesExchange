@@ -37,7 +37,7 @@ URL for deployed site
 
 URL for form 3 (from previous milestone) 
 ---
-(Trades)[http://linserv1.cims.nyu.edu:20942/trades/:username?]
+[Trades](http://linserv1.cims.nyu.edu:20942/trades/:username?)
 
 ### Special Instructions for Form 3
 1. When you are signed in, click on "Categories". 
@@ -49,15 +49,17 @@ URL for form 3 (from previous milestone)
 
 First link to github line number(s) for constructor, HOF, etc.
 ---
-(TODO: add link to line number(s) here) 
+[sortByLen HOF](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/1fca1e6dca316758d7df789c8eb1f38cc1d103ad/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L117-L122)
 
 Second link to github line number(s) for constructor, HOF, etc.
 ---
-(TODO: add link to line number(s) here) 
+[handleSubmit HOF](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/1fca1e6dca316758d7df789c8eb1f38cc1d103ad/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L30-L51)
 
 Short description for links above
 ---
-(TODO: describe what each link above is, one line each... for example: myFunction is a hof that retrieves json from a url, map is used to transform the Array of Person objects into an Array of strings that represents names)
+1. sortByLen is a hof that sorts a 2d-array based on the lengths of its sub-arrays. It essentially returns a comparator function for sorting. 
+
+2. handleSubmit is a hof that takes in two arguments: navigation function and axiosCall function. Once the handleSubmit is called, the program makes an axios call and navigates to another page. In this case, handleSubmit makes a post request to `${import.meta.env.VITE_BACKEND_URL2}/api/trades/${username}` to update the user's trades and also update the trader's trades. After, handleSubmit will navigate to the trades page where it will display all the user's trades that have been made. 
 
 Link to github line number(s) for schemas (db.js or models folder)
 ---
@@ -76,32 +78,24 @@ Description of research topics above with points
 
 Links to github line number(s) for research topics described above (one link per line)
 ---
-(TODO: add link to github line number(s), one per line for research topics ... for example, if using auth/passport, link to auth.js or where bulk of auth code is)
 
 ### React
 
-[Categories page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L8-L261)
+[Categories Page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L8-L261)
 
-[Trades page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L5-L43)
+[Trades Page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L5-L43)
 
 ### Axios
 
+[Categories page axios post request method](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/be47e2d6762e296d1f47d1acb2dd1ab5af5a2d68/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L30-L33)
+
+[Trades page axios get request method](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/be47e2d6762e296d1f47d1acb2dd1ab5af5a2d68/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L10-L20)
 
 ### Tailwind CSS
 
-[Categories Container CSS](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L134-L140)
+[Categories Page CSS](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/be47e2d6762e296d1f47d1acb2dd1ab5af5a2d68/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L134-L234)
 
-
-
-[Trades page CSS](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L26-L33)
-
-
-
-
-
-
-
-
+[Trades Page CSS](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L26-L33)
 
 Optional project notes 
 --- 
