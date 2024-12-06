@@ -33,7 +33,7 @@ router.get('/:username/myshop', async (req, res) => {
 // Route to add a product to the user's shop
 router.post('/:username/myshop/add', async (req, res) => {
     const { username } = req.params;
-    const { title, price, image } = req.body;
+    const { title, price, image, tag } = req.body;
   
     console.log('body', req.body);
   
@@ -47,10 +47,14 @@ router.post('/:username/myshop/add', async (req, res) => {
       console.log('existingUser:', existingUser);
   
       let shop = existingUser.shops && existingUser.shops[0]; 
+
       if (!shop) {
+        const baseSlug = `${username}-shop`;
+        // console.log('my shop add', baseSlug);
+        // const uniqueSlug = await generateUniqueSlug(baseSlug);
         shop = new Shop({
           userId: existingUser._id,
-          slug: `${username}-shop`,
+          slug: baseSlug,
           items: [], 
         });
         await shop.save();
@@ -59,10 +63,11 @@ router.post('/:username/myshop/add', async (req, res) => {
         await existingUser.save();
       }
   
-      const newItem = { name: title, price: price, image: image };
+      const newItem = { name: title, price: price, image: image, tag: tag };
+      console.log(newItem);
       shop.items.push(newItem);
       await shop.save();
-  
+      console.log(shop);
       console.log('shop after adding item:', shop.items);
   
       res.status(201).json({ message: 'Product added successfully', product: newItem });
