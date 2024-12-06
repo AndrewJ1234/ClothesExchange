@@ -115,8 +115,6 @@ allClothesArr.sort(sortByLen());
   const toggleForm = (id) => {
     setIsForm(isForm === id ? null : id);
   }
-
-  const handleClick = () => {
     // generate a form when clicked on
     //  select piece of clothes that you want to trade
     // condition: if the two pieces of clothes have same price or if your piece of clothes has higher price
@@ -124,7 +122,6 @@ allClothesArr.sort(sortByLen());
     // if the condition is true -> trade successful
     // piece of clothes that was from other username gets added to your shop and gets added to your list of trades
     // piece of clothes that you traded gets added to the other username
-  };
 
   // console.log('jacket Arr', jacketsArr)
   // console.log('pants Arr', pantsArr)
