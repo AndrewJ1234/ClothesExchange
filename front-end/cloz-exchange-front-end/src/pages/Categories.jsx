@@ -156,12 +156,12 @@ allClothesArr.sort(sortByLen());
                     className="border border-gray-300 p-6 bg-gray-100 flex flex-col items-center"
                   >
                     {/* Centered header */}
-                    <h2 className="text-xl font-bold mb-6">
+                    <h2 className="text-xl text-black  font-bold mb-6">
                       {clothesArr.category}
                     </h2>
 
                     {/* Inventory items */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full text-black">
                       {clothesArr.inventory.map(
                         (inventoryItem, inventoryIndex) => (
                           
@@ -175,14 +175,14 @@ allClothesArr.sort(sortByLen());
                               (item, itemIndex) => (
                                 <div
                                   key={`item-${categoryIndex}-${inventoryIndex}-${itemIndex}`}
-                                  className="border border-gray-300 p-4 text-center"
+                                  className="border border-gray-300 p-4 text-center text-black"
                                 >
                                   <img
                                     src={item.image}
                                     alt={item.name}
                                     className="w-32 h-32 object-cover mb-2"
                                   />
-                                  <p className="font-medium">{item.name}</p>
+                                  <p className="font-medium text-black">{item.name}</p>
                                   <p className="text-gray-600">${item.price}</p>
                                   <p className="text-gray-500 text-sm">
                                   <p>{inventoryItem.username}</p>
@@ -202,7 +202,7 @@ allClothesArr.sort(sortByLen());
                                   {/* {console.log(usernameShop.items)}   */}
                                   {isForm && (
                                     <>
-                                      <strong><h2>Trades</h2></strong>
+                                      <strong><h2 className='text-black'>Trades</h2></strong>
                                       <form 
                                       id={`${item.id}-${itemIndex}`}
                                         action={`${import.meta.env.VITE_BACKEND_URL2}/api/trades/${username}`}
@@ -217,13 +217,13 @@ allClothesArr.sort(sortByLen());
                                             
                                             className='border rounded-md p-4 flex flex-col items-center text-center' 
                                             key={item._id}>
-                                              <p>{item.name}</p>
-                                              <p>${item.price}</p>
+                                              <p className='text-black'>{item.name}</p>
+                                              <p className='text-black'>${item.price}</p>
                                               <img className='w-32 h-32'
                                                 src={item.image}
                                                 alt={item.name}
                                               />
-                                              <p>{item.tag}</p>
+                                              <p className='text-black'>{item.tag}</p>
                                               <input
                                                 type="radio"
                                                 name="tradeClothes"
