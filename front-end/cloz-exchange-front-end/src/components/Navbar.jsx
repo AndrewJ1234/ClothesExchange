@@ -16,14 +16,6 @@ export default function Navbar(){
 
     const { username, setUsername } = useUser(); 
 
-    // const handleSignOut = () => {
-    //     // Clear username from state and localStorage on sign-out
-    //     localStorage.removeItem("username");
-    //     setUsername('');
-    //     navigate("/register");
-    //   };
-
-
     const closeMobileMenu = () => {
         setClick(false);
     }
@@ -62,8 +54,8 @@ export default function Navbar(){
                                  <Link to={`/`} className='site-title'>ClozExchange</Link>
                                 <CustomLink to={`/`} className="nav-links" onClick={closeMobileMenu}>Home</CustomLink>
                                 <CustomLink to={`/categories/${username}`} className="nav-links" onClick={closeMobileMenu}>Categories</CustomLink>
-                                <CustomLink to={`/myshops/${username}`}className="nav-links" onClick={closeMobileMenu}>My Shops</CustomLink>
-                                <CustomLink to={`/product/:productId`}className="nav-links" onClick={closeMobileMenu}>Products</CustomLink>
+                                <CustomLink to={`/myshops/${username}`}className="nav-links" onClick={closeMobileMenu}>My Shop</CustomLink>
+                                {/* <CustomLink to={`/product/:productId`}className="nav-links" onClick={closeMobileMenu}>Products</CustomLink> */}
                                 <CustomLink to={`/trades/${username}`}className="nav-links" onClick={closeMobileMenu}>Trades</CustomLink>
                             </>
                     ) : (
