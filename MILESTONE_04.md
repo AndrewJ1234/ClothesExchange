@@ -61,7 +61,7 @@ Short description for links above
 
 Link to github line number(s) for schemas (db.js or models folder)
 ---
-(TODO: add link to schemas)
+[(Schemas)](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/back-end/src/models/db.mjs)
 
 Description of research topics above with points
 ---
@@ -77,6 +77,31 @@ Description of research topics above with points
 Links to github line number(s) for research topics described above (one link per line)
 ---
 (TODO: add link to github line number(s), one per line for research topics ... for example, if using auth/passport, link to auth.js or where bulk of auth code is)
+
+### React
+
+[Categories page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L8-L261)
+
+[Trades page](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L5-L43)
+
+### Axios
+
+
+### Tailwind CSS
+
+[Categories Container CSS](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Categories.jsx#L134-L140)
+
+
+
+[Trades page CSS](https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-AndrewJ1234/blob/6730e754d468f9381ed76e60531a97008985efed/front-end/cloz-exchange-front-end/src/pages/Trades.jsx#L26-L33)
+
+
+
+
+
+
+
+
 
 Optional project notes 
 --- 
