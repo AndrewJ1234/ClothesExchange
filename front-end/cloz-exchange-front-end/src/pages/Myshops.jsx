@@ -10,6 +10,7 @@ const MyShop = () => {
     title: "",
     price: "",
     image: "",
+    tag: "",
   });
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -21,6 +22,7 @@ const MyShop = () => {
         );
         if (response.data && response.data.shop) {
           setProducts(response.data.shop);
+          console.log('Products state after setting:', response.data.shop);
         } else {
           console.warn("No items found in the shop:", response.data);
           setProducts([]);
@@ -38,7 +40,8 @@ const MyShop = () => {
   const handleAddProduct = async (e) => {
     e.preventDefault();
 
-    if (!newProduct.title || !newProduct.price || !newProduct.image) {
+    if (!newProduct.title || !newProduct.price || !newProduct.image || !newProduct.tag ) {
+      console.log(newProduct.tag);
       console.error("All fields are required!");
       return;
     }
@@ -47,7 +50,9 @@ const MyShop = () => {
       title: newProduct.title,
       price: newProduct.price,
       image: newProduct.image,
+      tag: newProduct.tag
     };
+    console.log('Product Data line 54', productData); // debugging
 
     try {
       const response = await axios.post(
@@ -56,25 +61,31 @@ const MyShop = () => {
       );
       console.log("Product added:", response.data);
 
-      // Optimistically update the product list
       setProducts((prevProducts) => [...prevProducts, response.data.product]);
 
       // Reset the form
-      setNewProduct({ title: "", price: "", image: "" });
+      setNewProduct({ title: "", price: "", image: "", tag: "" });
       setIsFormVisible(false); // Hide form
     } catch (error) {
       console.error("Error adding product:", error);
     }
   };
 
+  const handleChange = (field, value) => {
+    setNewProduct({
+      ...newProduct,
+      [field]: value,
+    });
+  };
+
   return (
     <>
       <Navbar />
-      <div className="h-screen flex flex-col items-center mt-10">
-        <h2 className="text-2xl font-bold mb-4">{username}'s Shop</h2>
+      <div className="h-screen flex flex-col items-center mt-10 items-center">
+        <h2 className="text-2xl font-bold mb-4 relative top-8 justify-center">{username}'s Shop</h2>
 
         <button
-          className="text-base font-medium text-black border border-black bg-white px-4 py-2 rounded-md hover:bg-gray-100"
+          className="text-base font-medium text-black border border-black bg-white px-4 py-2 rounded-md hover:bg-gray-100 relative top-8"
           onClick={() => setIsFormVisible(!isFormVisible)}
         >
           {isFormVisible ? "Cancel" : "Create Product"}
@@ -140,6 +151,44 @@ const MyShop = () => {
                 required
               />
             </div>
+            <div className="mb-4 mr-2">
+              <label
+                htmlFor="image"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Tag
+              </label>
+                  <label className="block text-black">
+                    <input
+                      type="radio"
+                      name="tag"
+                      onChange={(e) => handleChange("tag", e.target.value)}
+                      value='pants'
+                      className="mr-2"
+                    />
+                    Pants
+                  </label>
+                  <label className="block text-black">
+                    <input
+                      type="radio"
+                      name="tag"
+                      onChange={(e) => handleChange("tag", e.target.value)}
+                      value='shirts'
+                      className="mr-2"
+                    />
+                    Shirts
+                  </label>
+                  <label className="block text-black">
+                    <input
+                      type="radio"
+                      name="tag"
+                      onChange={(e) => handleChange("tag", e.target.value)}
+                      value='jackets'
+                      className="mr-2"
+                    />
+                    Jackets
+                  </label>
+            </div>
             <button
               type="button"
               className="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md"
@@ -149,7 +198,11 @@ const MyShop = () => {
             </button>
           </form>
         )}
-        {console.log("Product list", products)}
+        {console.log("Product list", products)} 
+        {/* {products.map((prod) => {
+          console.log(prod.tag)
+          console.log('product tags', prod.tag)
+        })} */}
         {/* Product List */}
         <div className="mt-10 w-full max-w-4xl">
           <h3 className="text-lg font-bold mb-4">Products</h3>
@@ -165,7 +218,7 @@ const MyShop = () => {
                     alt={product.title || "Default Product"}
                     className="w-32 h-32 object-cover mb-2"
                   />
-                  <h4 className="text-xl font-semibold">{product.title}</h4>
+                  <h4 className="text-xl font-semibold">{product.name}</h4>
                   <p className="text-gray-700 mt-1">${product.price}</p>
                 </div>
               ))}
