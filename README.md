@@ -58,8 +58,6 @@ An Example List with Embedded Items:
 
 ### /myshops/:username - **Page for creating a new clothes piece to trade**
 ![created a specific clothes](documentation/create-clothes.png)  
-
-
 </div>
 
 <div align="center">
