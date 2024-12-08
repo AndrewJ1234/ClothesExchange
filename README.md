@@ -109,7 +109,7 @@ An Example List with Embedded Items:
 * (2 point) Tailwind CSS
     * use Tailwind CSS; it's a challenging framework to learn
   
-9 points total out of 8 required points
+10 points total out of 8 required points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
