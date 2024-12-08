@@ -71,10 +71,10 @@ Description of research topics above with points
     * used React.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
 * (2 points) Connect React to Express via Axios
     * send data back and forth to React and Express servers and vice versa using Axios
-* (1 point) Tailwind CSS
+* (2 point) Tailwind CSS
     * use Tailwind CSS; it's a challenging framework to learn
   
-9 points total out of 8 required points
+10 points total out of 8 required points
 
 Links to github line number(s) for research topics described above (one link per line)
 ---
