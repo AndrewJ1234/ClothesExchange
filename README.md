@@ -62,6 +62,7 @@ An Example List with Embedded Items:
 
 </div>
 
+<div align="center">
 ### /login - **Login page**
 ![user login](documentation/login.png)  
 </div>
@@ -70,22 +71,20 @@ An Example List with Embedded Items:
 
 ### /register - **Register page**
 ![register](documentation/register.png)  
+</div>
+
+<div align="center">
+
+### /trade/slug - **Trade your clothes for another piece of clothing**
+![tracks trades made](documentation/trade-username-slug.png)  
 
 
 </div>
 
 <div align="center">
 
-### /categories/slug - **Trade your clothes for another piece of clothing**
-![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)  
-
-
-</div>
-
-<div align="center">
-
-### /trades/slug - **Browse through clothes to trade from a particular category of clothing**
-![browse through clothes to trade](documentation/trade-slug-category.png)  
+### /categories/slug - **Browse through clothes to trade from a particular category of clothing and be able to trade them **
+![browse through clothes and be able to trade with other users](documentation/trade-slug-category.png)  
 
 
 </div>
