@@ -10,10 +10,8 @@ ClozExchange is a web app that allows users to trade clothes with other users. U
 
 The application will store Users, 
 
-* Users can have multiple shops (based on the category of clothing: shirts, shorts, pants etc.)
+* Users can have multiple shops (based on the category of clothing: shirts, shorts, pants.)
 * Each shop can have multiple clothing items (by embedding) and is associated with a specific clothing category
-* Users can have multiple chats
-* Users can write reviews for other users' shops, and user shops can receive multiple reviews from different users
 
 An Example User:
 
@@ -49,15 +47,6 @@ An Example List with Embedded Items:
       ]
     }
   ],
-  chats: [
-    { withUser: "username1", category: "pants", lastMessageChecked: false },
-    { withUser: "username2", category: "shirts", lastMessageChecked: false }
-  ],
-  reviews: [ 
-    { reviewer: "username1", category: "pants", comment: "Great quality!", checked: false },
-    { reviewer: "username2", category: "shirts", comment: "Satisfied", checked: false }
-  ],
-  createdAt:
 }
 ``` 
 
@@ -67,34 +56,14 @@ An Example List with Embedded Items:
 
 <div align="center">
 
-### /shops - **Page for showing all the shops**
-![shops](documentation/my-shops.png)  
-
-
-</div>
-
-<div align="center">
-
-### /create/clothes - **Page for creating a new clothes piece to trade**
+### /myshops/:username - **Page for creating a new clothes piece to trade**
 ![created a specific clothes](documentation/create-clothes.png)  
 
 
 </div>
 
-<div align="center">
-
-### / - **Home page which displays most popular pieces of clothing**
-![home](documentation/home.png)  
-
-
-</div>
-
-<div align="center">
-
 ### /login - **Login page**
 ![user login](documentation/login.png)  
-
-
 </div>
 
 <div align="center">
@@ -107,15 +76,7 @@ An Example List with Embedded Items:
 
 <div align="center">
 
-### /myAccount - **User's account settings**
-![user account](documentation/my-account.png)  
-
-
-</div>
-
-<div align="center">
-
-### /trade/clothes/slug - **Trade your clothes for another piece of clothing**
+### /categories/slug - **Trade your clothes for another piece of clothing**
 ![trade your clothes for another piece of clothing](documentation/trade-username-slug.png)  
 
 
